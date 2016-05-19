@@ -4,14 +4,17 @@
   "description": "RethinkDB Store for SenecaJS",
   "main": "rethinkdb-store.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha test/*.test.js"
+    "test": "mocha test/*.test.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CodeBlockInc/seneca-rethinkdb-store.git"
   },
   "contributors": [
-    "Abhinav Pobbati (http://www.codeblock.io/)"
+    {
+      "name": "Abhinav Pobbati",
+      "url": "http://www.codeblock.io/"
+    }
   ],
   "keywords": [
     "seneca",
@@ -20,7 +23,10 @@
     "rethinkdb",
     "json"
   ],
-  "author": "Abhinav Pobbati <apobbati@codeblock.io>",
+  "author": {
+    "name": "Abhinav Pobbati",
+    "email": "apobbati@codeblock.io"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/CodeBlockInc/seneca-rethinkdb-store/issues"
@@ -38,5 +44,28 @@
     "mocha": "^2.2.5",
     "seneca": "^0.6.4",
     "seneca-store-test": "^0.2.2"
-  }
+  },
+  "gitHead": "fd91d6564fb300ca015f92f310f1ad868f088535",
+  "_id": "seneca-rethinkdb-store@0.1.2",
+  "_shasum": "161a89d8fd1216f80dd8f08f6421b6ba8f0398c9",
+  "_from": "seneca-rethinkdb-store@*",
+  "_npmVersion": "2.3.0",
+  "_nodeVersion": "0.11.16",
+  "_npmUser": {
+    "name": "apobbati",
+    "email": "apobbati@codeblock.io"
+  },
+  "dist": {
+    "shasum": "161a89d8fd1216f80dd8f08f6421b6ba8f0398c9",
+    "tarball": "http://registry.npmjs.org/seneca-rethinkdb-store/-/seneca-rethinkdb-store-0.1.2.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "apobbati",
+      "email": "apobbati@codeblock.io"
+    }
+  ],
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/seneca-rethinkdb-store/-/seneca-rethinkdb-store-0.1.2.tgz",
+  "readme": "ERROR: No README data found!"
 }
