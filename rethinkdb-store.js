@@ -136,7 +136,7 @@ module.exports = function(opts) {
 
       function do_update(prev, rdent) {
         var obj = seneca.util.deepextend(prev, rdent);
-
+        obj = seneca.util.clean(obj)
         r.db(db).table(table).get(rdent.id).update(obj, {returnChanges: true}).run(conn, function(err, result) {
           //console.log(result.changes)
           if(err)
@@ -149,6 +149,7 @@ module.exports = function(opts) {
       }
 
       function do_insert(rdent) {
+        rdent = seneca.util.clean(rdent)
         r.db(db).table(table).insert(rdent, {returnChanges: true}).run(conn, function(err, result) {
           if(err) return cb(err);
           cb(null, ent.make$(result.changes[0].new_val));
