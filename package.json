@@ -1,6 +1,6 @@
 {
   "name": "seneca-rethinkdb-store",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "RethinkDB Store for SenecaJS",
   "main": "rethinkdb-store.js",
   "scripts": {
@@ -34,7 +34,8 @@
   "homepage": "https://github.com/mderrier/seneca-rethinkdb-store#readme",
   "dependencies": {
     "lodash": "^4.16.0",
-    "rethinkdbdash": "^2.3.23"
+    "rethinkdbdash": "^2.3.23",
+    "rethinkdb-template": "^0.0.4"
   },
   "peerDependencies": {
     "seneca": "*"
