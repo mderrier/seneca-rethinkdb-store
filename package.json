@@ -1,6 +1,6 @@
 {
   "name": "seneca-rethinkdb-store",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "RethinkDB Store for SenecaJS",
   "main": "rethinkdb-store.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CodeBlockInc/seneca-rethinkdb-store.git"
+    "url": "git+https://github.com/mderrier/seneca-rethinkdb-store.git"
   },
   "contributors": [
     {
@@ -24,17 +24,17 @@
     "json"
   ],
   "author": {
-    "name": "Abhinav Pobbati",
-    "email": "apobbati@codeblock.io"
+    "name": "Maximilien Derrier",
+    "email": "maximilien.derrier@gmail.com"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/CodeBlockInc/seneca-rethinkdb-store/issues"
+    "url": "https://github.com/mderrier/seneca-rethinkdb-store/issues"
   },
-  "homepage": "https://github.com/CodeBlockInc/seneca-rethinkdb-store#readme",
+  "homepage": "https://github.com/mderrier/seneca-rethinkdb-store#readme",
   "dependencies": {
     "lodash": "^4.16.0",
-    "rethinkdb": "^2.3.0"
+    "rethinkdbdash": "^2.3.23"
   },
   "peerDependencies": {
     "seneca": "*"
