@@ -73,21 +73,33 @@ module.exports = function (opts) {
     }
     db = dbopts.db
     r = require('rethinkdbdash')(rethinkOpts)
-    // setImmediate(function () {
-    // process.nextTick(function () {
-    return cb()
-    // })
-    // r.connect(dbopts).then(function (connection) {
-    //   conn = connection
-    //   seneca.log.debug('init', 'connect')
-    //   setImmediate(function() {
-    //     return cb()
-    //   })
-    //
-    // }).catch(err => {
-    //   return seneca.die('connect', err, conf)
-    // })
+       var applyDbTemplate = require('rethinkdb-template').default
+    var template = [
+  {
+    db: db,
+    tables: [
+      {
+        table: 'licences',
+        indexes: [
+          {
+            index: 'licence_id'
+          },
+          { index: '_id' }
+        ],
+      },
+      { table: 'clients' },
+      { table: 'distributeurs' },
+      { table: 'commandes' },
+      { table: 'devices' }
+    ]
   }
+];
+
+  var rethinkQuery = applyDbTemplate({template: template, r: r});
+  rethinkQuery.run().then(function() {
+        return cb();
+  });
+ }
 
   function tablename (canon) {
     // console.log('tablename:canon', canon)
