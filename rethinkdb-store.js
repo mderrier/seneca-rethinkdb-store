@@ -166,8 +166,7 @@ module.exports = function (opts) {
       }
 
       function do_update (prev, rdent) {
-        var obj = seneca.util.deepextend(prev, rdent)
-        obj = seneca.util.clean(obj)
+        var obj = seneca.util.clean(rdent)
         return r.table(table).get(rdent.id).update(obj, {returnChanges: true}).run().then(function (result) {
         // r.db(db).table(table).get(rdent.id).update(obj, {returnChanges: true}).run(conn).then(function (result) {
           // console.log(result.changes)
