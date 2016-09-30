@@ -156,19 +156,19 @@ module.exports = function (opts) {
 
         rdent.entity$ = ent.entity$
 
-        r.table(table).get(rdent.id).run().then(function (result) {
+        return r.table(table).get(rdent.id).run().then(function (result) {
         // r.db(db).table(table).get(rdent.id).run(conn).then(function (result) {
           if (!result)
-            do_insert(rdent)
+            return do_insert(rdent)
           else
-            do_update(result, rdent)
+            return do_update(result, rdent)
         }).catch(err => cb)
       }
 
       function do_update (prev, rdent) {
         var obj = seneca.util.deepextend(prev, rdent)
         obj = seneca.util.clean(obj)
-        r.table(table).get(rdent.id).update(obj, {returnChanges: true}).run().then(function (result) {
+        return r.table(table).get(rdent.id).update(obj, {returnChanges: true}).run().then(function (result) {
         // r.db(db).table(table).get(rdent.id).update(obj, {returnChanges: true}).run(conn).then(function (result) {
           // console.log(result.changes)
           if (result && result.replaced > 0)
@@ -180,7 +180,7 @@ module.exports = function (opts) {
 
       function do_insert (rdent) {
         rdent = seneca.util.clean(rdent)
-        r.table(table).insert(rdent, {returnChanges: true}).run().then(function (result) {
+        return r.table(table).insert(rdent, {returnChanges: true}).run().then(function (result) {
 //        r.db(db).table(table).insert(rdent, {returnChanges: true}).run(conn).then(function (result) {
           return cb(null, result ? ent.make$(result.changes[0].new_val) : null)
         }).catch(err => cb)
@@ -220,7 +220,6 @@ module.exports = function (opts) {
         //  if (err) return cb(err)
         if (results)
           results = results.map(function (item) { return qent.make$(item) })
-        console.log(results)
         return cb(null, results)
         // if (cursor) {
         //   cursor.eachAsync(function (row) {
